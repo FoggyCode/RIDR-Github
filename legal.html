@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Ridr — Rechtliches</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      :root {
+        --bg: #08080f;
+        --bg2: #0f0f1c;
+        --bg3: #161625;
+        --surface: rgba(12, 12, 22, 0.95);
+        --border: rgba(255, 255, 255, 0.08);
+        --accent: #4fffb0;
+        --text: #f0f0f0;
+        --text2: #999;
+        --text3: #666;
+        --radius: 18px;
+      }
+      html { scroll-behavior: smooth; }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "DM Sans", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100vh;
+        line-height: 1.6;
+      }
+      .site-header {
+        position: sticky; top: 0; z-index: 100;
+        background: rgba(8, 8, 15, 0.95);
+        backdrop-filter: blur(24px);
+        border-bottom: 1px solid var(--border);
+        padding: 0 1.5rem; height: 64px;
+        display: flex; align-items: center; justify-content: space-between;
+      }
+      .logo {
+        font-family: "Syne", sans-serif;
+        font-size: 18px; font-weight: 800;
+        letter-spacing: 3px; text-transform: uppercase;
+        color: var(--accent); text-decoration: none;
+      }
+      .header-badge {
+        font-size: 11px; padding: 4px 12px; border-radius: 100px;
+        background: rgba(79, 255, 176, 0.1);
+        border: 1px solid rgba(79, 255, 176, 0.2);
+        color: var(--accent); font-weight: 600;
+      }
+      .sticky-tabs {
+        position: sticky; top: 64px; z-index: 99;
+        background: rgba(8, 8, 15, 0.97);
+        border-bottom: 1px solid var(--border);
+        display: flex; padding: 0 1.5rem;
+      }
+      .tab-btn {
+        padding: 14px 20px; background: none; border: none;
+        border-bottom: 2px solid transparent;
+        color: var(--text3); font-family: "DM Sans", sans-serif;
+        font-size: 14px; font-weight: 500; cursor: pointer;
+      }
+      .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+      .main-wrap { max-width: 780px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
+      .legal-section { display: none; animation: fadeIn 0.3s ease; }
+      .legal-section.active { display: block; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+      .page-hero { margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+      .page-hero h1 { font-family: "Syne", sans-serif; font-size: 32px; font-weight: 800; margin-bottom: 0.6rem; }
+      .law-block { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1rem; }
+      .law-block-header { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; }
+      .law-block-icon { width: 42px; height: 42px; border-radius: 13px; background: var(--bg3); border: 1px solid var(--border); display: grid; place-items: center; font-size: 1.3rem; flex-shrink: 0; }
+      .law-block-title { font-family: "Syne", sans-serif; font-size: 16px; font-weight: 700; }
+      .law-block-subtitle { font-size: 12px; color: var(--text3); }
+      .law-block-body { font-size: 14px; color: var(--text2); margin-top: 1rem; }
+      .law-block.collapsed .law-block-body { display: none; }
+      .highlight-box { border-radius: 12px; padding: 12px 14px; margin: 0.8rem 0; font-size: 13px; line-height: 1.6; }
+      .highlight-box.warning { background: rgba(255, 167, 38, 0.08); border: 1px solid rgba(255, 167, 38, 0.2); color: #ffc860; }
+      .highlight-box.green { background: rgba(79, 255, 176, 0.07); border: 1px solid rgba(79, 255, 176, 0.2); color: #7ee8a2; }
+      .contact-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+      .contact-table td { padding: 8px 0; border-bottom: 1px solid var(--border); }
+      .contact-table td:first-child { color: var(--text3); width: 120px; font-size: 12px; text-transform: uppercase; }
+      .placeholder { color: var(--accent); font-weight: 600; }
+      @media (max-width: 600px) { .main-wrap { padding: 1.5rem 1rem; } }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="#">RIDR</a>
+      <span class="header-badge">Rechtliches</span>
+    </header>
+
+    <nav class="sticky-tabs">
+      <button class="tab-btn active" onclick="showTab('datenschutz', this)">Datenschutz</button>
+      <button class="tab-btn" onclick="showTab('impressum', this)">Impressum</button>
+    </nav>
+
+    <main class="main-wrap">
+      <section id="datenschutz" class="legal-section active">
+        <div class="page-hero">
+          <h1>Datenschutz</h1>
+          <p style="color: var(--text2); font-size: 14px;">Informationen über die rein lokale Verarbeitung deiner Fahrdaten.</p>
+        </div>
+
+        <div class="law-block">
+          <div class="law-block-header" onclick="toggleBlock(this)">
+            <div class="law-block-icon">👤</div>
+            <div class="law-block-title-wrap">
+              <div class="law-block-title">1. Verantwortlicher</div>
+              <div class="law-block-subtitle">Ansprechpartner für den Datenschutz</div>
+            </div>
+          </div>
+          <div class="law-block-body">
+            <table class="contact-table">
+              <tr><td>Name</td><td>Dan Bootz (Foggystudio)</td></tr>
+              <tr><td>Adresse</td><td>Bibertalstraße 35c, 86485 Biberbach</td></tr>
+              <tr><td>E-Mail</td><td>Foggystudio.info@gmail.com</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="law-block">
+          <div class="law-block-header" onclick="toggleBlock(this)">
+            <div class="law-block-icon">📋</div>
+            <div class="law-block-title-wrap">
+              <div class="law-block-title">2. Datenverarbeitung</div>
+              <div class="law-block-subtitle">Was lokal auf deinem Gerät passiert</div>
+            </div>
+          </div>
+          <div class="law-block-body">
+            <p><strong>2.1 Lokale Speicherung:</strong> Ridr speichert alle Fahrten und Statistiken ausschließlich lokal auf deinem Smartphone. Wir haben keinen Zugriff auf deine Routen.</p>
+            <div class="highlight-box warning">⚠️ Standortdaten (GPS) werden nur zur Berechnung von Speed & Distanz genutzt und niemals an Server übertragen.</div>
+            <p><strong>2.2 Keine Registrierung:</strong> Es ist kein Account nötig. Wir sammeln keine Namen oder E-Mails.</p>
+          </div>
+        </div>
+
+        <div class="law-block">
+          <div class="law-block-header" onclick="toggleBlock(this)">
+            <div class="law-block-icon">🔧</div>
+            <div class="law-block-title-wrap">
+              <div class="law-block-title">3. Karten & Dienste</div>
+              <div class="law-block-subtitle">Externe Provider</div>
+            </div>
+          </div>
+          <div class="law-block-body">
+            <p>Zur Anzeige der Karte lädt die App Kacheln von <strong>OpenStreetMap</strong>. Dabei wird technisch bedingt deine IP-Adresse übertragen, aber nicht gespeichert.</p>
+          </div>
+        </div>
+
+        <div class="law-block">
+          <div class="law-block-header" onclick="toggleBlock(this)">
+            <div class="law-block-icon">⚖️</div>
+            <div class="law-block-title-wrap">
+              <div class="law-block-title">4. Deine Rechte</div>
+              <div class="law-block-subtitle">Auskunft & Löschung</div>
+            </div>
+          </div>
+          <div class="law-block-body">
+            <p>Du kannst deine Daten jederzeit selbst löschen, indem du die Fahrten in der App entfernst oder die App deinstallierst.</p>
+            <div class="highlight-box green">Kontakt: Foggystudio.info@gmail.com</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="impressum" class="legal-section">
+        <div class="page-hero">
+          <h1>Impressum</h1>
+          <p style="color: var(--text2); font-size: 14px;">Angaben gemäß § 5 TMG.</p>
+        </div>
+        <div class="law-block">
+          <div class="law-block-body">
+            <table class="contact-table">
+              <tr><td>Herausgeber</td><td>Dan Bootz</td></tr>
+              <tr><td>Studio</td><td>Foggystudio</td></tr>
+              <tr><td>Adresse</td><td>Bibertalstraße 35c<br>86485 Biberbach, DE</td></tr>
+              <tr><td>E-Mail</td><td>Foggystudio.info@gmail.com</td></tr>
+              <tr><td>Web</td><td>www.ridr.app</td></tr>
+            </table>
+            <p style="margin-top:1.5rem"><strong>Haftung für Inhalte:</strong> Die Inhalte dieser App wurden mit größter Sorgfalt erstellt. Da Ridr ein Tracking-Tool ist, ist der Nutzer für die Einhaltung der Verkehrsregeln während der Nutzung selbst verantwortlich.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      function showTab(id, btn) {
+        document.querySelectorAll('.legal-section').forEach(s => s.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        btn.classList.add('active');
+        window.scrollTo(0,0);
+      }
+      function toggleBlock(header) {
+        header.parentElement.classList.toggle('collapsed');
+      }
+    </script>
+  </body>
+</html>
